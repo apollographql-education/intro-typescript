@@ -1,17 +1,14 @@
 {
-  "name": "subgraph-template-typescript-apollo-server",
+  "name": "Intro to GraphQL with TypeScript",
   "private": true,
-  "description": "A template for TypeScript projects with pre-configured tooling",
+  "description": "The starter code for the Odyssey Intro to GraphQL with TypeScript course",
   "version": "0.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apollographql/subgraph-template-typescript-apollo-server"
+    "url": "https://github.com/apollographql-education/intro-typescript"
   },
-  "homepage": "https://github.com/apollographql/subgraph-template-typescript-apollo-server#readme",
-  "bugs": {
-    "url": "https://github.com/apollographql/subgraph-template-typescript-apollo-server/issues"
-  },
+
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
