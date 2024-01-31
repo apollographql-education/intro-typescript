@@ -28,4 +28,5 @@ node_modules/
 # Intellij Configuration Files
 .idea/
 
-generated-schema.graphql
+# Always regenerate new types before running project
+src/types.ts
