@@ -7,6 +7,11 @@ const config: CodegenConfig = {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
         contextType: "./context#DataSourceContext",
+        mappers: {
+          Playlist: "./models#PlaylistModel",
+          Track: "./models#TrackModel",
+          AddItemsToPlaylistPayload: "./models#AddItemsToPlaylistPayloadModel",
+        },
       },
     },
   },

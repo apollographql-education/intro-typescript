@@ -8,4 +8,17 @@ export class SpotifyAPI extends RESTDataSource {
     const { items = [] } = playlists;
     return items;
   }
+
+  addItemsToPlaylist(input: { playlistId: string; uris: string[] }) {
+    const { playlistId, uris } = input;
+    return this.post(`playlists/${playlistId}/tracks`, {
+      params: {
+        uris: uris.join(","),
+      },
+    });
+  }
+
+  getPlaylist(playlistId: string) {
+    return this.get(`playlists/${playlistId}`);
+  }
 }
