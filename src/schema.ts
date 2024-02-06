@@ -13,12 +13,6 @@ export const typeDefs = gql`
       input: AddItemsToPlaylistInput!
     ): AddItemsToPlaylistPayload!
   }
-  input AddItemsToPlaylistInput {
-    "The ID of the playlist."
-    playlistId: ID!
-    "A comma-separated list of Spotify URIs to add."
-    uris: [String!]!
-  }
   type AddItemsToPlaylistPayload {
     "Similar to HTTP status code, represents the status of the mutation"
     code: Int!
@@ -28,6 +22,12 @@ export const typeDefs = gql`
     message: String!
     "The playlist that contains the newly added items"
     playlist: Playlist
+  }
+    input AddItemsToPlaylistInput {
+    "The ID of the playlist."
+    playlistId: ID!
+    "A comma-separated list of Spotify URIs to add."
+    uris: [String!]!
   }
   "A curated collection of tracks designed for a specific activity or mood."
   type Playlist {

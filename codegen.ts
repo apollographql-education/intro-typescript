@@ -11,8 +11,8 @@ const config: CodegenConfig = {
           Playlist: "./models#PlaylistModel",
           Track: "./models#TrackModel",
           AddItemsToPlaylistPayload: "./models#AddItemsToPlaylistPayloadModel",
-        },
-      },
+        }
+      }
     },
   },
 };

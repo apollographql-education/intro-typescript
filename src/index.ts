@@ -1,24 +1,25 @@
 import { ApolloServer } from "@apollo/server";
-import { SpotifyAPI } from "./datasources/spotify-client";
-import { resolvers } from "./resolvers";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from "./schema";
+import { resolvers } from "./resolvers";
+import { SpotifyAPI } from "./datasources/spotify-api";
 
 async function startApolloServer() {
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers
+  });
   const { url } = await startStandaloneServer(server, {
     context: async () => {
       const { cache } = server;
-
       return {
         dataSources: {
-          spotifyAPI: new SpotifyAPI({ cache }),
-        },
-      };
-    },
-  });
+          spotifyAPI: new SpotifyAPI({ cache })
+        }
+      }
+    }});
   console.log(`
-    🚀  Server is running
+    🚀  Server is running!
     📭  Query at ${url}
   `);
 }
