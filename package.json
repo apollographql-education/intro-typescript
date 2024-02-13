@@ -15,7 +15,7 @@
   },
   "scripts": {
     "compile": "tsc",
-    "dev": "concurrently \"ts-node-dev --respawn ./src/index.ts\" \"npm run generate --watch\"",
+    "dev": "concurrently \"ts-node-dev --respawn --watch ./**/*.graphql ./src/index.ts\" \"npm run generate --watch\"",
     "start": "npm run compile && nodemon ./dist/index.js",
     "test": "jest",
     "generate": "graphql-codegen --watch \"src/schema.ts\""
