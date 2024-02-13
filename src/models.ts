@@ -4,13 +4,12 @@ export type PlaylistModel = {
   name: string;
   description: string;
   tracks: {
-    items: TrackModelFromPlaylist[];
+    items: {
+      track: TrackModel
+    }[]
   }
 };
 
-export type TrackModelFromPlaylist = {
-  track: TrackModel;
-};
 
 export type TrackModel = {
   id: string;

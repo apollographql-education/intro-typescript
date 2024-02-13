@@ -46,8 +46,7 @@ export const resolvers: Resolvers = {
   },
   Track: {
     durationMs: (parent) => {
-      const { duration_ms: durationMs } = parent;
-      return durationMs;
+      return parent.duration_ms;
     }
   }
 }

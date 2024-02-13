@@ -4,12 +4,14 @@ type Query {
   "Retrieves a specific playlist."
   playlist(id: ID!): Playlist
 }
+
 type Mutation {
   "Add one or more items to a user's playlist."
   addItemsToPlaylist(
     input: AddItemsToPlaylistInput!
   ): AddItemsToPlaylistPayload!
 }
+
 type AddItemsToPlaylistPayload {
   "Similar to HTTP status code, represents the status of the mutation"
   code: Int!
@@ -20,12 +22,14 @@ type AddItemsToPlaylistPayload {
   "The playlist that contains the newly added items"
   playlist: Playlist
 }
+
   input AddItemsToPlaylistInput {
   "The ID of the playlist."
   playlistId: ID!
   "A comma-separated list of Spotify URIs to add."
   uris: [String!]!
 }
+
 "A curated collection of tracks designed for a specific activity or mood."
 type Playlist {
   "The ID for the playlist."
@@ -37,6 +41,7 @@ type Playlist {
   "The tracks of the playlist."
   tracks: [Track!]!
 }
+
 "A single audio file, usually a song."
 type Track {
   "The ID for the track."
