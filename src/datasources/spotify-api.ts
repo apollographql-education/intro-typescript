@@ -1,5 +1,4 @@
 import { RESTDataSource } from "@apollo/datasource-rest";
-import { Playlist } from "../types"
 import { PlaylistModel, TrackModel, SnapshotOrError } from '../models'
 
 export class SpotifyAPI extends RESTDataSource {
