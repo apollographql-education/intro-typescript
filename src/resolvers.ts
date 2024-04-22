@@ -39,9 +39,8 @@ export const resolvers: Resolvers = {
     },
   },
   Playlist: {
-    tracks: ({ tracks }) => {
-      const { items = [] } = tracks;
-      return items.map(({ track }) => track);
+    tracks: async ({ tracks, id }, _, { dataSources }) => {
+      return tracks.items ? tracks.items.map(({track}) => track) : dataSources.spotifyAPI.getTracks(id);
     }
   },
   Track: {
